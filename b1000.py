@@ -1,6 +1,0 @@
-s = input()
-i = input()
-#print(s)
-#print(i)
-n = int(i)
-print(s[n-1])
