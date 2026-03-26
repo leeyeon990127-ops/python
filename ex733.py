@@ -1,0 +1,7 @@
+person = {'이름': '나귀욤', '나이':7, '키':120, '몸무게':23}
+for v in person.values():
+    print(v)
+for K in person.keys():
+    print(K)
+for k,v in person.items():
+    print(k,v)    
