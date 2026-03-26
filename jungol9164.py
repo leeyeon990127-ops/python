@@ -10,9 +10,6 @@ print(10-5, "= 10 - 5")
 
 #9167 print("Animal:", 'Panda')
 
-inp1 = input()
-inp2 = input()
-inp3 = input()
 
 #print(inp1)
 #print(inp2)
