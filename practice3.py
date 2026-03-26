@@ -68,4 +68,3 @@ print(my_set)
 my_set.clear()
 print(my_set)
 del my_set
-print(my_set)
