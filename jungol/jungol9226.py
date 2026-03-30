@@ -17,4 +17,4 @@ else:
 #2--------------
 a, b = map(int, input().split())
 print(min(a, b)) #min(최솟값) 작은 값이 나옴
-print(max(a, b)) #max(최댓값) 큰 값이 나옴옴
+print(max(a, b)) #max(최댓값) 큰 값이 나옴
