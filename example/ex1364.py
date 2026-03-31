@@ -30,5 +30,3 @@ b1.set_travel_mode(30)
 
 b2 = AdvancedTravelBlackBox('초록이', 120000, 64)
 b2.set_travel_mode(15)
-b1.make()
-b1.send()

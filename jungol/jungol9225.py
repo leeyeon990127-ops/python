@@ -1,20 +1,19 @@
 N = int(input())
 M = int(input())
 
-
 print(N + M)
 
 if N % 2 == 1:
     print("ODD")    
 else:
-    if N % 2 == 1:
+    if M % 2 == 1:
         print("ODD")        
-
+#----------------------------------------
 
 
 N = int(input())
 M = int(input())
-print(N + M)
+#print(N + M)
 
 if N % 2 != 0 or M % 2 != 0:
     print("ODD")

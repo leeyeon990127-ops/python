@@ -22,7 +22,7 @@ def Write_str():
     print("~!@#$%^&*()_+ ")
 
 inp = int(input())
-print(inp)
+#print(inp)
 
 for x in range(inp):
     Write_str()
