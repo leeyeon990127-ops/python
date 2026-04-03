@@ -15,6 +15,17 @@
 #    print(X, end=' ')
 
 lst = []
+for i in range(5):
+    lst.append(int(input()))
 
-for i in lst:
-    print(*i)
+for num in lst:
+    print(num, end=' ')
+
+#2---------------------------------------------
+lst = []
+for i in range(5):
+    x = input()
+    lst.append(x)
+
+for j in range(len(lst)):
+    print(len(j), end=" ")    

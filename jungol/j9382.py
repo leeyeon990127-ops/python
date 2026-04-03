@@ -7,9 +7,29 @@
 #그래서 lst = []라고 미리 리스트를 만들지 않아도, split() 자체가 그 역할을 대신 해주는 것
 
 A = input().split() 
-print(A)
+B = input()
+for i in A[::-1]:
+    print(i, end=' ')
+
+print() #줄바꿈
+
+print(B)
+print(B) #print('   ', B, '   ')
 
 
-for x in range(len(A)-1, -1, -1):
-    print(A[])
+#---------------------------------------------------------------------
+A = input().split() 
+B = input() 
+B_list = B.split() # 여기서 리스트가 됨 (예: ['Hello', 'world!'])
 
+# 1. A 역순 출력
+for i in A[::-1]:
+    print(i, end=' ')
+print()
+
+# 2. 리스트를 다시 문자열로 합쳐서 출력 (" ".join 사용)
+# " ".join()은 리스트 안의 요소들을 공백으로 이어 붙여줍니다.
+B_string = " ".join(B_list) 
+
+print(f"   {B_string}   ")
+print(B_string)
