@@ -7,6 +7,7 @@ def Sentance():
     else:
         return f"함수 외부: a = 5, b = 10"
         
-print(Sentance())
+Sentance()
 
-for x in range(4):
+#for x in range(4):
+
