@@ -6,4 +6,4 @@ print(A, B)
 
 if N == A:
     print(True)
-elseN    
+else
