@@ -1,12 +1,13 @@
 import oracledb
+from person import Person
 
  # 데이터베이스 접속 정보 설정
-dsn = oracledb.makedsn("localhost", 1521, service_name="XE")  #localhost:내 pc의 IP = '127.0.0.1'
+dsn = oracledb.makedsn("localhost", 1521, service_name="XE")  #localhost:내 pc의 IP = '127.0.0.1' = cmd: ipfig
 conn = oracledb.connect(user="c##mbc", password="qwer1234", dsn=dsn)
 
 # 쿼리 실행을 위한 커서 생성
 cursor = conn.cursor()
-    
+
 def show_menu():
     print("-- 임직원 관리 시스템 --")
     print("- 1. 직원 추가    -")
@@ -22,28 +23,33 @@ def insert_emp(): #empno, ename, job, mgr, hiredate, sal, comm, deptno
     empno, ename = input().split()
     print(empno, ename)
     
-
+    if empno.isdigit():
 # INSERT 예제
-    try:
-        #INSERT INTO EMP(EMPNO, ENAME) VALUES('1234','LEO')
-         cursor.execute("INSERT INTO EMP(EMPNO, ENAME) VALUES (:1, :2)", [empno, ename.upper()])
-         conn.commit()
-         print("Data inserted successfully")
-    except oracledb.DatabaseError as e:
-     print(f"Error inserting data: {e}")   
+        try:
+            #INSERT INTO EMP(EMPNO, ENAME) VALUES('1234','LEO')
+            cursor.execute("INSERT INTO EMP(EMPNO, ENAME) VALUES (:1, :2)", [empno, ename.upper()])
+            conn.commit()
+            print("Data inserted successfully")
+        except oracledb.DatabaseError as e:
+            print(f"Error inserting data: {e}")   
+    else:
+        print("YEONSOO-0001 : 사번 입력 오류 입니다. 숫자만 입력 가능합니다.")
 
 def search_emp():
 # SELECT 예제
     try:
-        cursor.execute("SELECT * FROM emp")
+        cursor.execute('''
+        SELECT EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO
+        FROM emp 
+        ORDER BY EMPNO''')
         for row in cursor:
-            print(row)
+            #print(row)
+            p = Person(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7])
+            p.print_person()
     except oracledb.DatabaseError as e:
         print(f"Error fetching data: {e}")
 
-
-loop = True
-while loop:
+while True:
     select = int(show_menu())
     if select == 1:
         print("1. 직원 추가 메뉴")
@@ -55,7 +61,7 @@ while loop:
         search_emp()
     else:
         print("프로그램 종료***")   
-        loop = False
+        break
 
 # 커서 및 커넥션 닫기
 cursor.close()
