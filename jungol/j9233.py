@@ -1,5 +1,10 @@
 # if elif else
 
-N = map(int(input()))
-print(N)
+a = int(input())
+#print(a)
+#b = input()
+#print(b)
 
+
+if a >= 3:
+    return 'Mid'
