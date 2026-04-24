@@ -1,6 +1,6 @@
 #밖 for:행
 #안 for : 열
-# ->밖for과 안for의 형식을 생각해기
+# ->밖for과 안for의 형식을 생각해기 
 
 #2중 for문
 N = int(input())
