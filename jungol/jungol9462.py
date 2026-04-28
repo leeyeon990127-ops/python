@@ -11,9 +11,18 @@ def bubble_sort(lst):
         for i in range(n-1):
             for j in range(0, n-1-i):
                 if lst[j] > lst[j+1]:
+                    lst[j], lst[j + 1] = lst[j + 1], lst[j] #두 값의 위치를 바꿈(swap)
+            print(*(lst))       
+bubble_sort(lst)             
+
+# --- 스왑 시작 ---
+temp = lst[j]
+lst[j] = lst[j + 1]
+lst[j + 1] = temp
+# --- 스왑 끝 ---
 
 
-#2 함수를 이용하지 않은 
+#2 함수를 이용하지 않은 ################################################################
 N = int(input())
 
 hap=list(map(int,input().split()))
